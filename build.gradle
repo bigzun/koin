@@ -1,0 +1,28 @@
+// Top-level build file where you can add configuration options common to all sub-projects/modules.
+import dependencies.Dependencies
+
+buildscript {
+    repositories {
+        google()
+        jcenter()
+        mavenCentral()
+    }
+    dependencies {
+        classpath Dependencies.Plugins.android
+        classpath Dependencies.Plugins.kotlin
+        classpath Dependencies.Plugins.kotlinAllOpen
+        classpath Dependencies.Plugins.koin
+    }
+}
+
+allprojects {
+    repositories {
+        google()
+        jcenter()
+        mavenCentral()
+    }
+}
+
+task clean (type: Delete) {
+    delete rootProject.buildDir
+}

@@ -1,0 +1,66 @@
+/*
+ * Copyright (c) https://bigzun.blogspot.com/
+ * Email: bigzun.com@gmail.com
+ * Created by admin on 2020/8/11
+ *
+ */
+import dependencies.Config
+import dependencies.Dependencies
+import org.jetbrains.annotations.Nullable
+
+apply plugin: Dependencies.BuildPlugins.androidApplication
+apply plugin: Dependencies.BuildPlugins.kotlin
+apply plugin: Dependencies.BuildPlugins.kotlinAndroidExtensions
+apply plugin: Dependencies.BuildPlugins.kapt
+apply plugin: Dependencies.BuildPlugins.kotlinAllOpen
+apply plugin: 'kotlin-android'
+
+android {
+    compileSdkVersion Dependencies.compileSdk
+    buildToolsVersion Dependencies.buildToolsSdk
+
+    defaultConfig {
+        applicationId Config.applicationId
+        minSdkVersion Dependencies.minSdk
+        targetSdkVersion Dependencies.targetSdk
+        versionCode Config.versionCode
+        versionName Config.versionName
+        multiDexEnabled true
+        vectorDrawables.useSupportLibrary = true
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+
+    compileOptions {
+        sourceCompatibility 1.8
+        targetCompatibility 1.8
+    }
+
+    kotlinOptions {
+        jvmTarget = JavaVersion.VERSION_1_8.toString()
+    }
+}
+
+dependencies {
+    implementation fileTree(dir: "libs", include: ["*.jar"])
+    implementation Dependencies.kotlin
+    implementation Dependencies.ktx
+    implementation Dependencies.annotation
+    implementation Dependencies.appcompat
+    implementation Dependencies.material
+    implementation Dependencies.constraintLayout
+    implementation Dependencies.recyclerView
+    implementation Dependencies.cardView
+    implementation Dependencies.legacySupport
+    implementation Dependencies.navigationFragment
+    implementation Dependencies.navigationUi
+    implementation Dependencies.viewpager2
+    implementation 'androidx.appcompat:appcompat:1.1.0'
+    implementation 'androidx.constraintlayout:constraintlayout:1.1.3'
+
+}

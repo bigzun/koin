@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  ~ Copyright (c) https://bigzun.blogspot.com/
+  ~ Email: bigzun.com@gmail.com
+  ~ Created by admin on 2020/8/11
+  ~
+  -->
+
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.bigzun.app.views.SplashActivity">
+
+</androidx.constraintlayout.widget.ConstraintLayout>

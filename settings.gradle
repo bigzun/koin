@@ -1,0 +1,3 @@
+rootProject.name='Bigzun Koin'
+include ':app'
+
